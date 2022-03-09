@@ -1,5 +1,8 @@
 # Scripts
-Repositorio de scripts para varias tareas en diferentes plataformas.
+Repositorio de scripts para varias tareas en diferentes plataformas
+
+* [Debian](./debian)
+* [Raspberry Pi](./raspberrypi)
 
 Inicialmente tienen que ver con la configuración inicial de una VM o Servidor, para luego ejecutar acciones a través de Ansible u otras herramientas de gestión.
 
