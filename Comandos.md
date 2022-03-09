@@ -1,3 +1,37 @@
+## Journald
+
+Listar los booteos que está registrados en el journal
+
+```
+journalctl --list-boots
+```
+
+Obtener los logs desde una fecha en especial hasta otra con "keywords"
+
+```
+# Con keywords
+journalctl --since yesterday --until "1 hour ago"
+# Con fechas, usar comillas
+journalctl --since "2022-01-02" --until "2022-01-03 03:00"
+```
+
+Obtener los logs de ciertos servicios
+
+```
+journalctl -u apache2.service -u php-fpm.service --since today
+```
+
+Otros adicionales:
+
+```
+# Por Process ID (PID)
+journalctl _PID=8088
+# Por usuario de sistema
+id -u www-data
+# Por UID de sistema
+journalctl _UID=33 --since today
+```
+
 ## SSH
 
 Utilizar una sesión de SSH como proxy para otra sesión en un host no nateado (interno) de SSH
