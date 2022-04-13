@@ -30,11 +30,11 @@ FILE="${PORT}.acl"
         else
             EXTRA_COMMAND=${FAKE}
         fi
-        ${IPT} -A INPUT ${PORT_COMMAND} ${SRC_COMMAND} ${MAC_COMMAND} ${EXTRA_COMMAND} -J ACCEPT
+        ${IPT} -A INPUT ${PORT_COMMAND} ${SRC_COMMAND} ${MAC_COMMAND} ${EXTRA_COMMAND} -j ACCEPT
     done 
 } < $FILE
 # Rule after adding ACL
-${IPT} -A INPUT ${PORT_COMMAND} -J DROP
+${IPT} -A INPUT ${PORT_COMMAND} -j DROP
 
 ## Example
 #IP;MAC;extra
