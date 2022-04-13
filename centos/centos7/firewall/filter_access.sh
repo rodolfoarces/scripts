@@ -1,7 +1,7 @@
 #!/bin/bash
 
 IFACE="eth0"
-IPT="echo /sbin/iptables"
+IPT="echo /usr/sbin/iptables"
 
 # PostgreSQL
 PORT="5432"
@@ -34,7 +34,7 @@ FILE="${PORT}.acl"
     done 
 } < $FILE
 # Rule after adding ACL
-${IPT} -A INPUT ${PORT_COMMAND} -j DROP
+${IPT} -A INPUT ${PORT_COMMAND} -j REJECT
 
 ## Example
 #IP;MAC;extra
